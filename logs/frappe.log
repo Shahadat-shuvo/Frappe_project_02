@@ -1,0 +1,205 @@
+2023-08-05 18:53:39,033 ERROR frappe New Exception collected with id: 2023-08-05 18:53:38.680031-127.0.0.1-168
+Site: shahadat.com
+Form Dict: {'doc': '{"name":"MyBot","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"idx":0,"issingle":1,"is_tree":0,"istable":0,"editable_grid":1,"track_changes":0,"module":"Hexbot","naming_rule":"","name_case":"","sort_field":"modified","sort_order":"DESC","read_only":0,"in_create":0,"allow_copy":0,"allow_rename":1,"allow_import":0,"hide_toolbar":0,"track_seen":0,"max_attachments":0,"document_type":"","engine":"InnoDB","is_submittable":0,"show_name_in_global_search":0,"custom":0,"beta":0,"has_web_view":1,"allow_guest_to_view":1,"route":"hexbot/user","email_append_to":0,"show_title_field_in_link":0,"translated_doctype":0,"is_calendar_and_gantt":0,"quick_entry":0,"track_views":0,"is_virtual":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"default_view":"List","force_re_route_to_default_view":0,"show_preview_popup":0,"index_web_pages_for_search":1,"doctype":"DocType","states":[],"links":[],"actions":[],"permissions":[{"name":"e2e46720ca","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"permissions","parenttype":"DocType","idx":1,"permlevel":0,"role":"System Manager","read":1,"write":1,"create":1,"submit":0,"cancel":0,"delete":1,"amend":0,"report":0,"export":0,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0,"set_user_permissions":0,"doctype":"DocPerm"},{"name":"5b267132dd","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"permissions","parenttype":"DocType","idx":2,"permlevel":0,"role":"Administrator","read":1,"write":1,"create":1,"submit":0,"cancel":0,"delete":1,"amend":0,"report":0,"export":0,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0,"set_user_permissions":0,"doctype":"DocPerm"}],"fields":[{"name":"d92b4cb4af","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"fields","parenttype":"DocType","idx":1,"fieldname":"prompt","label":"Prompt","fieldtype":"Text","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":1,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":1,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"doctype":"DocField"},{"name":"1911a9e73a","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"fields","parenttype":"DocType","idx":2,"fieldname":"response","label":"Response","fieldtype":"Data","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":1,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":1,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"doctype":"DocField"},{"name":"fc4f623f2f","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"fields","parenttype":"DocType","idx":3,"fieldname":"route","label":"Route","fieldtype":"Data","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":0,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":0,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"doctype":"DocField"}],"__last_sync_on":"2023-08-05T18:52:41.182Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2023-08-05 18:55:20,351 ERROR frappe New Exception collected with id: 2023-08-05 18:55:19.232518-127.0.0.1-9d7
+Site: shahadat.com
+Form Dict: {'doc': '{"name":"MyBot","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"idx":0,"issingle":1,"is_tree":0,"istable":0,"editable_grid":1,"track_changes":0,"module":"Hexbot","naming_rule":"","name_case":"","sort_field":"modified","sort_order":"DESC","read_only":0,"in_create":0,"allow_copy":0,"allow_rename":1,"allow_import":0,"hide_toolbar":0,"track_seen":0,"max_attachments":0,"document_type":"","engine":"InnoDB","is_submittable":0,"show_name_in_global_search":0,"custom":0,"beta":0,"has_web_view":1,"allow_guest_to_view":1,"route":"hexbot/user","email_append_to":0,"show_title_field_in_link":0,"translated_doctype":0,"is_calendar_and_gantt":0,"quick_entry":0,"track_views":0,"is_virtual":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"default_view":"List","force_re_route_to_default_view":0,"show_preview_popup":0,"index_web_pages_for_search":1,"doctype":"DocType","links":[],"actions":[],"fields":[{"name":"d92b4cb4af","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"fields","parenttype":"DocType","idx":1,"fieldname":"prompt","label":"Prompt","fieldtype":"Text","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":1,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":1,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"doctype":"DocField"},{"name":"1911a9e73a","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"fields","parenttype":"DocType","idx":2,"fieldname":"response","label":"Response","fieldtype":"Data","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":1,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":1,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"doctype":"DocField"},{"name":"fc4f623f2f","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"fields","parenttype":"DocType","idx":3,"fieldname":"route","label":"Route","fieldtype":"Data","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":0,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":0,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"doctype":"DocField"}],"permissions":[{"name":"e2e46720ca","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"permissions","parenttype":"DocType","idx":1,"permlevel":0,"role":"System Manager","read":1,"write":1,"create":1,"submit":0,"cancel":0,"delete":1,"amend":0,"report":0,"export":0,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0,"set_user_permissions":0,"doctype":"DocPerm"},{"name":"5b267132dd","creation":"2023-08-05 16:44:05.214723","modified":"2023-08-05 16:44:05.214723","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"MyBot","parentfield":"permissions","parenttype":"DocType","idx":2,"permlevel":0,"role":"Administrator","read":1,"write":1,"create":1,"submit":0,"cancel":0,"delete":1,"amend":0,"report":0,"export":0,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0,"set_user_permissions":0,"doctype":"DocPerm"}],"states":[],"__last_sync_on":"2023-08-05T18:54:32.059Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2023-08-07 07:49:28,631 ERROR frappe New Exception collected with id: 2023-08-07 07:49:27.843093-127.0.0.1-c2b
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.my_name'}
+2023-08-07 07:51:02,068 ERROR frappe New Exception collected with id: 2023-08-07 07:51:01.560352-127.0.0.1-239
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.my_name'}
+2023-08-07 07:51:41,361 ERROR frappe New Exception collected with id: 2023-08-07 07:51:40.562087-127.0.0.1-e85
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.my_name'}
+2023-08-13 07:27:02,811 ERROR frappe New Exception collected with id: 2023-08-13 07:27:01.562234-127.0.0.1-f39
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:27:18,190 ERROR frappe New Exception collected with id: 2023-08-13 07:27:18.098755-127.0.0.1-da5
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:27:55,153 ERROR frappe New Exception collected with id: 2023-08-13 07:27:55.065720-127.0.0.1-961
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:28:39,877 ERROR frappe New Exception collected with id: 2023-08-13 07:28:39.751372-127.0.0.1-c98
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:29:30,638 ERROR frappe New Exception collected with id: 2023-08-13 07:29:29.728734-127.0.0.1-cac
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:30:17,538 ERROR frappe New Exception collected with id: 2023-08-13 07:30:17.461309-127.0.0.1-6c2
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:31:46,885 ERROR frappe New Exception collected with id: 2023-08-13 07:31:46.806592-127.0.0.1-095
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 07:33:09,355 ERROR frappe New Exception collected with id: 2023-08-13 07:33:08.695655-127.0.0.1-d5a
+Site: shahadat.com
+Form Dict: {'doctype': 'MyBot', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-08-13 09:26:39,806 ERROR frappe Could not take error snapshot: characters_written
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/app.py", line 91, in application
+    response = frappe.handler.handle()
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/friday/frappePro/frappe-bench/apps/chatbot/chatbot/hexbot/doctype/mybot/mybot.py", line 91, in test
+    pdf_reader = PdfReader(pdf)
+  File "/home/friday/frappePro/frappe-bench/env/lib/python3.10/site-packages/pypdf/_reader.py", line 316, in __init__
+    with open(stream, "rb") as fh:
+FileNotFoundError: [Errno 2] No such file or directory: 'http://172.16.33.188:8000/private/files/constitution594dcf.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2023-08-13 09:29:18,748 ERROR frappe Could not take error snapshot: characters_written
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/app.py", line 91, in application
+    response = frappe.handler.handle()
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/friday/frappePro/frappe-bench/apps/chatbot/chatbot/hexbot/doctype/mybot/mybot.py", line 91, in test
+    pdf_reader = PdfReader(pdf)
+  File "/home/friday/frappePro/frappe-bench/env/lib/python3.10/site-packages/pypdf/_reader.py", line 316, in __init__
+    with open(stream, "rb") as fh:
+FileNotFoundError: [Errno 2] No such file or directory: 'http://172.16.33.188:8000/private/files/constitution594dcf.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2023-08-13 09:32:32,969 ERROR frappe Could not take error snapshot: characters_written
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/app.py", line 91, in application
+    response = frappe.handler.handle()
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/friday/frappePro/frappe-bench/apps/chatbot/chatbot/hexbot/doctype/mybot/mybot.py", line 91, in test
+    pdf_reader = PdfReader(pdf)
+  File "/home/friday/frappePro/frappe-bench/env/lib/python3.10/site-packages/pypdf/_reader.py", line 316, in __init__
+    with open(stream, "rb") as fh:
+FileNotFoundError: [Errno 2] No such file or directory: 'http://172.16.33.188:8000//files/constitution.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2023-08-13 09:33:24,877 ERROR frappe Could not take error snapshot: characters_written
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/app.py", line 91, in application
+    response = frappe.handler.handle()
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/friday/frappePro/frappe-bench/apps/chatbot/chatbot/hexbot/doctype/mybot/mybot.py", line 91, in test
+    pdf_reader = PdfReader(pdf)
+  File "/home/friday/frappePro/frappe-bench/env/lib/python3.10/site-packages/pypdf/_reader.py", line 316, in __init__
+    with open(stream, "rb") as fh:
+FileNotFoundError: [Errno 2] No such file or directory: 'http://172.16.33.188:8000/files/constitution.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2023-08-13 09:33:25,597 ERROR frappe Could not take error snapshot: characters_written
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/app.py", line 91, in application
+    response = frappe.handler.handle()
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/friday/frappePro/frappe-bench/apps/chatbot/chatbot/hexbot/doctype/mybot/mybot.py", line 91, in test
+    pdf_reader = PdfReader(pdf)
+  File "/home/friday/frappePro/frappe-bench/env/lib/python3.10/site-packages/pypdf/_reader.py", line 316, in __init__
+    with open(stream, "rb") as fh:
+FileNotFoundError: [Errno 2] No such file or directory: 'http://172.16.33.188:8000/files/constitution.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/friday/frappePro/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2023-08-13 09:36:13,428 ERROR frappe New Exception collected with id: 2023-08-13 09:36:12.530404-127.0.0.1-75a
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 05:47:46,824 ERROR frappe New Exception collected with id: 2023-08-15 05:47:45.922383-127.0.0.1-a3f
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:05:14,403 ERROR frappe New Exception collected with id: 2023-08-15 06:05:14.101939-127.0.0.1-78c
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:06:17,657 ERROR frappe New Exception collected with id: 2023-08-15 06:06:16.825818-127.0.0.1-058
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:22:46,746 ERROR frappe New Exception collected with id: 2023-08-15 06:22:45.777605-127.0.0.1-d65
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:26:56,321 ERROR frappe New Exception collected with id: 2023-08-15 06:26:55.388509-127.0.0.1-107
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:54:21,116 ERROR frappe New Exception collected with id: 2023-08-15 06:54:20.766906-127.0.0.1-09e
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:54:38,551 ERROR frappe New Exception collected with id: 2023-08-15 06:54:38.547686-127.0.0.1-21d
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:57:10,538 ERROR frappe New Exception collected with id: 2023-08-15 06:57:09.018013-127.0.0.1-876
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 06:57:16,525 ERROR frappe New Exception collected with id: 2023-08-15 06:57:16.520413-127.0.0.1-77f
+Site: shahadat.com
+Form Dict: {'user_text_input': 'what is water logging?', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.test'}
+2023-08-15 08:02:12,525 ERROR frappe New Exception collected with id: 2023-08-15 08:02:12.195960-127.0.0.1-a91
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.conversation'}
+2023-08-15 08:03:35,096 ERROR frappe New Exception collected with id: 2023-08-15 08:03:33.899961-127.0.0.1-e19
+Site: shahadat.com
+Form Dict: {'user_text_input': 'hi', 'cmd': 'chatbot.hexbot.doctype.mybot.mybot.conversation'}

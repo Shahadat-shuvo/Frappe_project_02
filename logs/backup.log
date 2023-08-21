@@ -1,0 +1,528 @@
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230805_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-05 06:00:05.597864
+Config  : ./shahadat.com/private/backups/20230805_060002-shahadat_com-site_config_backup.json 94.0B
+Database: ./shahadat.com/private/backups/20230805_060002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+Backup failed for Site shuvo.com. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "apps/frappe/frappe/database/database.py", line 606, in get_values
+    out = self._get_values_from_table(
+  File "apps/frappe/frappe/database/database.py", line 835, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "apps/frappe/frappe/database/database.py", line 220, in sql
+    self._cursor.execute(query, values)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 158, in execute
+    result = self._query(query)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 325, in _query
+    conn.query(q)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 779, in _read_query_result
+    result.read()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_d789f0088a808b7e.tabDocType' doesn't exist")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 718, in backup
+    odb = scheduled_backup(
+  File "apps/frappe/frappe/utils/backups.py", line 532, in scheduled_backup
+    odb = new_backup(
+  File "apps/frappe/frappe/utils/backups.py", line 584, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+  File "apps/frappe/frappe/utils/backups.py", line 187, in get_backup
+    self.set_backup_file_name()
+  File "apps/frappe/frappe/utils/backups.py", line 207, in set_backup_file_name
+    enc = "-enc" if frappe.get_system_settings("encrypt_backup") else ""
+  File "apps/frappe/frappe/__init__.py", line 2329, in get_system_settings
+    local.system_settings = get_cached_doc("System Settings")
+  File "apps/frappe/frappe/__init__.py", line 1104, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "apps/frappe/frappe/__init__.py", line 1197, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "apps/frappe/frappe/model/base_document.py", line 82, in get_controller
+    site_controllers[doctype] = _get_controller()
+  File "apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "apps/frappe/frappe/database/database.py", line 509, in get_value
+    result = self.get_values(
+  File "apps/frappe/frappe/database/database.py", line 626, in get_values
+    out = self.get_values_from_single(
+  File "apps/frappe/frappe/database/database.py", line 676, in get_values_from_single
+    r = frappe.qb.get_query(
+  File "apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "apps/frappe/frappe/database/database.py", line 220, in sql
+    self._cursor.execute(query, values)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 158, in execute
+    result = self._query(query)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 325, in _query
+    conn.query(q)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 779, in _read_query_result
+    result.read()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_d789f0088a808b7e.tabSingles' doesn't exist")
+
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230805_120003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-05 12:00:06.045518
+Config  : ./shahadat.com/private/backups/20230805_120003-shahadat_com-site_config_backup.json 94.0B
+Database: ./shahadat.com/private/backups/20230805_120003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+Backup failed for Site shuvo.com. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "apps/frappe/frappe/database/database.py", line 606, in get_values
+    out = self._get_values_from_table(
+  File "apps/frappe/frappe/database/database.py", line 835, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "apps/frappe/frappe/database/database.py", line 220, in sql
+    self._cursor.execute(query, values)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 158, in execute
+    result = self._query(query)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 325, in _query
+    conn.query(q)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 779, in _read_query_result
+    result.read()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_d789f0088a808b7e.tabDocType' doesn't exist")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 718, in backup
+    odb = scheduled_backup(
+  File "apps/frappe/frappe/utils/backups.py", line 532, in scheduled_backup
+    odb = new_backup(
+  File "apps/frappe/frappe/utils/backups.py", line 584, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+  File "apps/frappe/frappe/utils/backups.py", line 187, in get_backup
+    self.set_backup_file_name()
+  File "apps/frappe/frappe/utils/backups.py", line 207, in set_backup_file_name
+    enc = "-enc" if frappe.get_system_settings("encrypt_backup") else ""
+  File "apps/frappe/frappe/__init__.py", line 2329, in get_system_settings
+    local.system_settings = get_cached_doc("System Settings")
+  File "apps/frappe/frappe/__init__.py", line 1104, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "apps/frappe/frappe/__init__.py", line 1197, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "apps/frappe/frappe/model/base_document.py", line 82, in get_controller
+    site_controllers[doctype] = _get_controller()
+  File "apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "apps/frappe/frappe/database/database.py", line 509, in get_value
+    result = self.get_values(
+  File "apps/frappe/frappe/database/database.py", line 626, in get_values
+    out = self.get_values_from_single(
+  File "apps/frappe/frappe/database/database.py", line 676, in get_values_from_single
+    r = frappe.qb.get_query(
+  File "apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "apps/frappe/frappe/database/database.py", line 220, in sql
+    self._cursor.execute(query, values)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 158, in execute
+    result = self._query(query)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 325, in _query
+    conn.query(q)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 779, in _read_query_result
+    result.read()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_d789f0088a808b7e.tabSingles' doesn't exist")
+
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230805_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-05 18:00:05.826612
+Config  : ./shahadat.com/private/backups/20230805_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230805_180002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230806_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-06 00:00:05.610662
+Config  : ./shahadat.com/private/backups/20230806_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230806_000002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230806_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-06 06:00:06.392129
+Config  : ./shahadat.com/private/backups/20230806_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230806_060003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230806_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-06 12:00:06.124125
+Config  : ./shahadat.com/private/backups/20230806_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230806_120002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230806_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-06 18:00:06.143455
+Config  : ./shahadat.com/private/backups/20230806_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230806_180002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230807_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-07 00:00:06.066409
+Config  : ./shahadat.com/private/backups/20230807_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230807_000002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230807_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-07 06:00:05.793281
+Config  : ./shahadat.com/private/backups/20230807_060002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230807_060002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230807_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-07 12:00:05.574768
+Config  : ./shahadat.com/private/backups/20230807_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230807_120002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230807_180003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-07 18:00:06.294338
+Config  : ./shahadat.com/private/backups/20230807_180003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230807_180003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230808_000003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-08 00:00:06.571431
+Config  : ./shahadat.com/private/backups/20230808_000003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230808_000003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230808_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-08 06:00:06.468839
+Config  : ./shahadat.com/private/backups/20230808_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230808_060003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230808_120003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-08 12:00:06.357044
+Config  : ./shahadat.com/private/backups/20230808_120003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230808_120003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230808_180003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-08 18:00:06.459298
+Config  : ./shahadat.com/private/backups/20230808_180003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230808_180003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230809_000003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-09 00:00:06.170275
+Config  : ./shahadat.com/private/backups/20230809_000003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230809_000003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230809_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-09 06:00:05.998296
+Config  : ./shahadat.com/private/backups/20230809_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230809_060003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230809_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-09 12:00:05.684711
+Config  : ./shahadat.com/private/backups/20230809_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230809_120002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230809_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-09 18:00:05.435263
+Config  : ./shahadat.com/private/backups/20230809_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230809_180002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230810_000003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-10 00:00:05.951669
+Config  : ./shahadat.com/private/backups/20230810_000003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230810_000003-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230810_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-10 06:00:05.504244
+Config  : ./shahadat.com/private/backups/20230810_060002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230810_060002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230810_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-10 12:00:05.594513
+Config  : ./shahadat.com/private/backups/20230810_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230810_120002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230810_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-10 18:00:05.297725
+Config  : ./shahadat.com/private/backups/20230810_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230810_180002-shahadat_com-database.sql.gz         1.1MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230811_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-11 00:00:05.861264
+Config  : ./shahadat.com/private/backups/20230811_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230811_000002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230811_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-11 06:00:05.672586
+Config  : ./shahadat.com/private/backups/20230811_060002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230811_060002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230811_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-11 12:00:05.179135
+Config  : ./shahadat.com/private/backups/20230811_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230811_120002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230811_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-11 18:00:05.695543
+Config  : ./shahadat.com/private/backups/20230811_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230811_180002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230812_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-12 00:00:05.177595
+Config  : ./shahadat.com/private/backups/20230812_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230812_000002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230812_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-12 06:00:05.873835
+Config  : ./shahadat.com/private/backups/20230812_060002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230812_060002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230812_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-12 12:00:05.313620
+Config  : ./shahadat.com/private/backups/20230812_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230812_120002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230813_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-13 12:00:05.936407
+Config  : ./shahadat.com/private/backups/20230813_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230813_120002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230813_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-13 18:00:05.579731
+Config  : ./shahadat.com/private/backups/20230813_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230813_180002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230814_000003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-14 00:00:06.219045
+Config  : ./shahadat.com/private/backups/20230814_000003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230814_000003-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230814_060004-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-14 06:00:08.377604
+Config  : ./shahadat.com/private/backups/20230814_060004-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230814_060004-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230814_120003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-14 12:00:06.139829
+Config  : ./shahadat.com/private/backups/20230814_120003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230814_120003-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230814_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-14 18:00:05.716580
+Config  : ./shahadat.com/private/backups/20230814_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230814_180002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230815_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-15 00:00:05.390890
+Config  : ./shahadat.com/private/backups/20230815_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230815_000002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230815_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-15 06:00:06.787963
+Config  : ./shahadat.com/private/backups/20230815_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230815_060003-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230815_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-15 12:00:05.453373
+Config  : ./shahadat.com/private/backups/20230815_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230815_120002-shahadat_com-database.sql.gz         1.2MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230815_180004-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-15 18:00:08.035461
+Config  : ./shahadat.com/private/backups/20230815_180004-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230815_180004-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230816_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-16 00:00:06.188169
+Config  : ./shahadat.com/private/backups/20230816_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230816_000002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230816_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-16 06:00:06.130349
+Config  : ./shahadat.com/private/backups/20230816_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230816_060003-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230816_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-16 12:00:05.857454
+Config  : ./shahadat.com/private/backups/20230816_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230816_120002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230816_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-16 18:00:05.776993
+Config  : ./shahadat.com/private/backups/20230816_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230816_180002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230817_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-17 00:00:05.352243
+Config  : ./shahadat.com/private/backups/20230817_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230817_000002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230817_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-17 06:00:06.073598
+Config  : ./shahadat.com/private/backups/20230817_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230817_060003-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230817_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-17 12:00:05.620545
+Config  : ./shahadat.com/private/backups/20230817_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230817_120002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230817_180004-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-17 18:00:07.441816
+Config  : ./shahadat.com/private/backups/20230817_180004-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230817_180004-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230818_000003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-18 00:00:06.079227
+Config  : ./shahadat.com/private/backups/20230818_000003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230818_000003-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230818_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-18 06:00:05.999355
+Config  : ./shahadat.com/private/backups/20230818_060002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230818_060002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230818_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-18 12:00:05.676203
+Config  : ./shahadat.com/private/backups/20230818_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230818_120002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230818_180002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-18 18:00:05.242156
+Config  : ./shahadat.com/private/backups/20230818_180002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230818_180002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230819_000002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-19 00:00:05.819052
+Config  : ./shahadat.com/private/backups/20230819_000002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230819_000002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230819_060002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-19 06:00:05.718464
+Config  : ./shahadat.com/private/backups/20230819_060002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230819_060002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230820_060004-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-20 06:00:07.820686
+Config  : ./shahadat.com/private/backups/20230820_060004-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230820_060004-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230820_120002-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-20 12:00:05.454954
+Config  : ./shahadat.com/private/backups/20230820_120002-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230820_120002-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230820_180005-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-20 18:00:08.219842
+Config  : ./shahadat.com/private/backups/20230820_180005-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230820_180005-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230821_000003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-21 00:00:06.968031
+Config  : ./shahadat.com/private/backups/20230821_000003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230821_000003-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230821_060003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-21 06:00:07.066353
+Config  : ./shahadat.com/private/backups/20230821_060003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230821_060003-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230821_120003-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-21 12:00:06.902346
+Config  : ./shahadat.com/private/backups/20230821_120003-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230821_120003-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _4accc847141e291b -p********** _4accc847141e291b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./shahadat.com/private/backups/20230821_180005-shahadat_com-database.sql.gz
+
+Backup Summary for shahadat.com at 2023-08-21 18:00:08.405285
+Config  : ./shahadat.com/private/backups/20230821_180005-shahadat_com-site_config_backup.json 117.0B
+Database: ./shahadat.com/private/backups/20230821_180005-shahadat_com-database.sql.gz         1.3MiB
+Backup for Site shahadat.com has been successfully completed
